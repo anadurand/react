@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Getting Started</title>
+    </head>
+    <body>
+        <h1>Getting Started</h1>
+        <h2>Descripción</h2>
+        <p>
+          Cómo integrar react a páginas estáticas existentes
+        </p>
+        <div id="cabecera">
+            LO QUE QUIERAN
+        </div>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <!-- libreria react -->
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+        
+        <script  type="text/babel">
+            function Cabecera(props) {
+                const titulo = 'Saludo';
+
+                return (
+                    <div style={{ borderColor: 'red' }}>
+                    <h2>{titulo}</h2>
+                    <p>
+                        Hola <b>{props.saludo}</b>. <br />
+                        Un link? <br />
+                        <a href="http://laboratoria.la">Laboratoria</a>
+                    </p>
+                    </div>
+                )
+            }
+
+            ReactDOM.render(
+            <Cabecera nombre="Mundo" />,
+            // aqui se pasa los props
+            document.getElementById('cabecera')
+            );
+        </script>
+    </body>
+</html>
