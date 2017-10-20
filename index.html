@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Getting Started with React</title>
+    </head>
+    <body>
+        <h1>Getting Started</h1>
+        <h2>Descripción</h2>
+        <p>
+          Cómo integrar react a páginas estáticas existentes
+        </p>
+        <div id="react-container">
+            LO QUE QUIERAN
+        </div>
+        
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <!-- libreria react -->
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <!-- libreria react renderer para web -->
+        <!-- tambien hay para mobil que es react native para IOS y android y tambien para uwp para renderizar en microsoft -->
+        <script>
+            const div = React.DOM.div
+            const h2 = React.DOM.h2
+        //  const p = React.DOM.p
+            function Cabecera() {  // Cabecera(props)
+              const titulo = 'Hola Mundo';
+        //    const saludo = props.saludo;
+              const elemento = div(null,
+                h2(null, titulo),
+                // p(null, saludo)
+              )
+                // div({se pasa atributos que ahora se llama props}, children)  las props {id: "react", className: "aside"}
+                // se puede anidar etiquetas sobre etiquetas como el ejemplo
+              return elemento
+            }
+        
+            ReactDOM.render(
+              Cabecera(),
+            //   Cabecera({saludo: "Laboratoria"})
+              document.getElementById('react-container')
+
+            //   ReactDOM.render(componente, nodo) componente y donde se va renderizar, en este caso la funcion porque queremos que se ejecute ya que necesitamos el componente.
+            );
+            // la funcion cabedera(props) puede recibir props que es un objeto y puede tener diferentes datos
+
+          </script>
+    </body>
+</html>
